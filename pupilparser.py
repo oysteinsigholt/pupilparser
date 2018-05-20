@@ -4,16 +4,14 @@ import msgpack
 import sys
 import matplotlib.pyplot as plt
 
-blink_filter_length = 0.2
-blink_confindence_threshold = 0.5
-blink_resolution = 10
-
-blinks = []
-blink_freq = []
-
-
-
 def main():
+    blink_filter_length = 0.2
+    blink_confindence_threshold = 0.5
+    blink_resolution = 20.0
+
+    blinks = []
+    blink_freq = []
+
     start_time = sys.maxint
     end_time = -sys.maxint
     last_blink_onset = -1
@@ -53,11 +51,13 @@ def main():
     print str(len(blinks)) + " blinks"
 
     # Get blink freq
-    for i in range(blink_resolution, int(end_time-start_time)):
+    for i in range(int(blink_resolution), int(end_time-start_time)):
         blink_count = 0
+
         for blink in blinks:
-            if blink > i - blink_resolution and blink < i:
+            if blink > (i - blink_resolution) + start_time and blink < i + start_time:
                 blink_count += 1
+
         blink_freq.append(blink_count/blink_resolution)
 
     plt.plot(blink_freq)
