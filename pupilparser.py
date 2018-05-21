@@ -2,15 +2,21 @@
 
 import msgpack
 import sys
+import math
 import matplotlib.pyplot as plt
 
 def main():
     blink_filter_length = 0.2
     blink_confindence_threshold = 0.5
     blink_resolution = 20.0
+    fixation_resolution = .1
 
     blinks = []
     blink_freq = []
+
+    pupil_diameter_x = [] # time
+    pupil_diameter_y = [] # diameter
+    
 
     start_time = sys.maxint
     end_time = -sys.maxint
@@ -60,8 +66,46 @@ def main():
 
         blink_freq.append(blink_count/blink_resolution)
 
+    # -------
+    # Pupil Diameter
+    for pupil_position in pupil_data_object["pupil_positions"]:
+        if pupil_position["confidence"] > 0.6:
+            pupil_diameter_x.append(pupil_position["timestamp"] - start_time)
+            pupil_diameter_y.append(pupil_position["diameter_3d"])
+
+    # -----
+    # Duration
+
+    fixations = [0] * int(((1.0/fixation_resolution) * (end_time - start_time)))
+    for fixation in pupil_data_object["fixations"]:
+        fixation_start = int((fixation["timestamp"] - start_time) * 1./fixation_resolution)
+        fixation_end = fixation_start + int(fixation["duration"] / 1000. * 1./fixation_resolution)
+        for i in range(fixation_start, fixation_end):
+            if i < len(fixations):
+                fixations[i] = 1
+
+
+    
+
+    
+
+
+    blinkPlt = plt.figure(0)
+
     plt.plot(blink_freq)
     plt.ylabel('Blink Frequency')
+    plt.xlabel('time [s]')
+    #blinkPlt.show()
+
+    diameterPlt = plt.figure(1)
+    plt.plot(pupil_diameter_x, pupil_diameter_y)
+    plt.ylabel("diameter [mm]")
+    plt.xlabel("time [s]")
+
+    fixationPlt = plt.figure(2)
+    plt.plot(fixations)
+    plt.ylabel("fixating [bool]")
+    plt.xlabel("time [s*10]")
     plt.show()
 
 if __name__ == "__main__":
