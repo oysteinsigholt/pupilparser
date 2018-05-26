@@ -103,7 +103,8 @@ def main():
     plt.xlabel("time [s]")
 
     fixationPlt = plt.figure(2)
-    plt.plot(fixations)
+    #plt.plot(fixations)
+    plt.bar(range(len(fixations)), fixations, 1)
     plt.ylabel("fixating [bool]")
     plt.xlabel("time [s*10]")
     plt.show()
