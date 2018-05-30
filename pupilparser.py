@@ -5,6 +5,9 @@ import sys
 import os
 import math
 import csv
+import numpy as np
+import peakutils
+import json
 import matplotlib.pyplot as plt
 
 def main():
@@ -118,7 +121,7 @@ def main():
     plt.plot(pupil_error_x, pupil_error_y)
     plt.ylabel("confidence")
     plt.xlabel("time [s]")
-    plt.savefig(os.path.join(sys.argv[2], 'error.png'))
+    plt.savefig(os.path.join(sys.argv[2], 'confidence.png'))
 
 
     with open(os.path.join(sys.argv[2], 'diameter.csv'), 'wb') as csvfile:
@@ -135,6 +138,27 @@ def main():
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(pupil_error_x)
         writer.writerow(pupil_error_y)
+
+    summary = {}
+    summary["blink_freq"] = float(sum(blink_freq))/float(len(blink_freq))
+    summary["blink_freq_calibration"] =  float(sum(blink_freq[:120]))/float(len(blink_freq[:120]))
+    summary["blink_freq_execution"] = float(sum(blink_freq[120:]))/float(len(blink_freq[120:]))
+    summary["blink_freq_diff"] = summary["blink_freq_execution"] - summary["blink_freq_calibration"]
+
+    summary["blink_freq_std"] = np.std(blink_freq)
+    summary["blink_freq_calibration_std"] = np.std(blink_freq[:120])
+    summary["blink_freq_execution_std"] = np.std(blink_freq[120:])
+
+    summary["blink_freq_peaks"] = len(peakutils.indexes(np.array(blink_freq), thres=0.15, min_dist=10))
+    summary["blink_freq_calibration_peaks"] = len(peakutils.indexes(np.array(blink_freq[:120]), thres=0.15, min_dist=10))
+    summary["blink_freq_execution_peaks"] = len(peakutils.indexes(np.array(blink_freq[120:]), thres=0.15, min_dist=10))
+
+    summary["blink_freq_calibration_max"] = max(np.array(blink_freq[:120]))
+    summary["blink_freq_execution_max"] = max(np.array(blink_freq[120:]))
+    summary["blink_freq_max_diff"] = summary["blink_freq_execution_max"] - summary["blink_freq_calibration_max"]
+
+    with open(os.path.join(sys.argv[2], 'summary.json'), 'w') as file:
+        file.write(json.dumps(summary, indent=4))
 
     #fixationPlt = plt.figure(2)
     #plt.plot(fixations)

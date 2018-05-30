@@ -1,0 +1,754 @@
+{
+    "22_000": [
+        {
+            "ratings": [
+                2, 
+                4, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                4, 
+                1
+            ], 
+            "name": "flexibility", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                1
+            ], 
+            "name": "elaboration", 
+            "mean": 2.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                1
+            ], 
+            "name": "fluency", 
+            "mean": 1.6666666666666667
+        }
+    ], 
+    "22_001": [
+        {
+            "ratings": [
+                3, 
+                4, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                4
+            ], 
+            "name": "flexibility", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                5, 
+                5, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 5.0
+        }, 
+        {
+            "ratings": [
+                4, 
+                3, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 3.0
+        }
+    ], 
+    "24_000": [
+        {
+            "ratings": [
+                2, 
+                3, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 2.6666666666666665
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                5
+            ], 
+            "name": "flexibility", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 2.0
+        }
+    ], 
+    "24_001": [
+        {
+            "ratings": [
+                5, 
+                5, 
+                5
+            ], 
+            "name": "originality", 
+            "mean": 5.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                1, 
+                4
+            ], 
+            "name": "flexibility", 
+            "mean": 2.6666666666666665
+        }, 
+        {
+            "ratings": [
+                4, 
+                5, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 4.666666666666667
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 1.3333333333333333
+        }
+    ], 
+    "25_000": [
+        {
+            "ratings": [
+                2, 
+                2, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                3
+            ], 
+            "name": "flexibility", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                3, 
+                2, 
+                2
+            ], 
+            "name": "elaboration", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                4
+            ], 
+            "name": "fluency", 
+            "mean": 3.0
+        }
+    ], 
+    "25_001": [
+        {
+            "ratings": [
+                4, 
+                4, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.6666666666666665
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                2
+            ], 
+            "name": "flexibility", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                2
+            ], 
+            "name": "elaboration", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                4
+            ], 
+            "name": "fluency", 
+            "mean": 2.6666666666666665
+        }
+    ], 
+    "25_002": [
+        {
+            "ratings": [
+                5, 
+                4, 
+                5
+            ], 
+            "name": "originality", 
+            "mean": 4.666666666666667
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                2
+            ], 
+            "name": "flexibility", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 4.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                5
+            ], 
+            "name": "fluency", 
+            "mean": 3.0
+        }
+    ], 
+    "25_003": [
+        {
+            "ratings": [
+                3, 
+                3, 
+                5
+            ], 
+            "name": "originality", 
+            "mean": 3.6666666666666665
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                4, 
+                4, 
+                3
+            ], 
+            "name": "flexibility", 
+            "mean": 3.6666666666666665
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                3
+            ], 
+            "name": "elaboration", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                3, 
+                3, 
+                5
+            ], 
+            "name": "fluency", 
+            "mean": 3.6666666666666665
+        }
+    ], 
+    "25_004": [
+        {
+            "ratings": [
+                5, 
+                5, 
+                5
+            ], 
+            "name": "originality", 
+            "mean": 5.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "flexibility", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                3, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                1, 
+                1
+            ], 
+            "name": "fluency", 
+            "mean": 1.3333333333333333
+        }
+    ], 
+    "26_000": [
+        {
+            "ratings": [
+                3, 
+                3, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                4, 
+                2
+            ], 
+            "name": "flexibility", 
+            "mean": 2.6666666666666665
+        }, 
+        {
+            "ratings": [
+                2, 
+                4, 
+                5
+            ], 
+            "name": "elaboration", 
+            "mean": 3.6666666666666665
+        }, 
+        {
+            "ratings": [
+                4, 
+                3, 
+                5
+            ], 
+            "name": "fluency", 
+            "mean": 4.0
+        }
+    ], 
+    "26_001": [
+        {
+            "ratings": [
+                5, 
+                5, 
+                5
+            ], 
+            "name": "originality", 
+            "mean": 5.0
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                4, 
+                2, 
+                5
+            ], 
+            "name": "flexibility", 
+            "mean": 3.6666666666666665
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "elaboration", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                5, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 3.0
+        }
+    ], 
+    "26_002": [
+        {
+            "ratings": [
+                4, 
+                3, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                3
+            ], 
+            "name": "flexibility", 
+            "mean": 2.3333333333333335
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                3
+            ], 
+            "name": "elaboration", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                3
+            ], 
+            "name": "fluency", 
+            "mean": 2.3333333333333335
+        }
+    ], 
+    "26_003": [
+        {
+            "ratings": [
+                4, 
+                3, 
+                3
+            ], 
+            "name": "originality", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                4, 
+                2
+            ], 
+            "name": "flexibility", 
+            "mean": 2.6666666666666665
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                3
+            ], 
+            "name": "elaboration", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                3, 
+                2, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 2.3333333333333335
+        }
+    ], 
+    "26_004": [
+        {
+            "ratings": [
+                5, 
+                4, 
+                4
+            ], 
+            "name": "originality", 
+            "mean": 4.333333333333333
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                5, 
+                4, 
+                3
+            ], 
+            "name": "flexibility", 
+            "mean": 4.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                4, 
+                2
+            ], 
+            "name": "elaboration", 
+            "mean": 3.0
+        }, 
+        {
+            "ratings": [
+                4, 
+                5, 
+                5
+            ], 
+            "name": "fluency", 
+            "mean": 4.666666666666667
+        }
+    ], 
+    "26_005": [
+        {
+            "ratings": [
+                2, 
+                4, 
+                4
+            ], 
+            "name": "originality", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                1
+            ], 
+            "name": "creativity", 
+            "mean": 1.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                2, 
+                2
+            ], 
+            "name": "flexibility", 
+            "mean": 2.0
+        }, 
+        {
+            "ratings": [
+                2, 
+                4, 
+                2
+            ], 
+            "name": "elaboration", 
+            "mean": 2.6666666666666665
+        }, 
+        {
+            "ratings": [
+                2, 
+                3, 
+                2
+            ], 
+            "name": "fluency", 
+            "mean": 2.3333333333333335
+        }
+    ], 
+    "26_006": [
+        {
+            "ratings": [
+                5, 
+                4, 
+                4
+            ], 
+            "name": "originality", 
+            "mean": 4.333333333333333
+        }, 
+        {
+            "ratings": [
+                1, 
+                1, 
+                4
+            ], 
+            "name": "creativity", 
+            "mean": 2.0
+        }, 
+        {
+            "ratings": [
+                4, 
+                5, 
+                3
+            ], 
+            "name": "flexibility", 
+            "mean": 4.0
+        }, 
+        {
+            "ratings": [
+                3, 
+                3, 
+                4
+            ], 
+            "name": "elaboration", 
+            "mean": 3.3333333333333335
+        }, 
+        {
+            "ratings": [
+                5, 
+                5, 
+                5
+            ], 
+            "name": "fluency", 
+            "mean": 5.0
+        }
+    ]
+}
