@@ -2,7 +2,9 @@
 
 import msgpack
 import sys
+import os
 import math
+import csv
 import matplotlib.pyplot as plt
 
 def main():
@@ -16,14 +18,14 @@ def main():
 
     pupil_diameter_x = [] # time
     pupil_diameter_y = [] # diameter
-    
+
 
     start_time = sys.maxint
     end_time = -sys.maxint
     last_blink_onset = -1
 
-    if len(sys.argv) < 2:
-        print "Usage: ./pupilparser.py <pupil_data file>"
+    if len(sys.argv) < 3:
+        print "Usage: ./pupilparser.py <pupil_data file> <output folder>"
         exit()
 
     try:
@@ -68,10 +70,16 @@ def main():
 
     # -------
     # Pupil Diameter
+    last_diameter = -1
+    last_timestamp = -1
+
     for pupil_position in pupil_data_object["pupil_positions"]:
         if pupil_position["confidence"] > 0.6:
-            pupil_diameter_x.append(pupil_position["timestamp"] - start_time)
-            pupil_diameter_y.append(pupil_position["diameter_3d"])
+            if last_timestamp == -1 or last_diameter == -1 or abs(last_diameter - pupil_position["diameter_3d"])/abs(pupil_position["timestamp"]-last_timestamp) < 1:
+                pupil_diameter_x.append(pupil_position["timestamp"] - start_time)
+                pupil_diameter_y.append(pupil_position["diameter_3d"])
+                last_timestamp = pupil_position["timestamp"]
+                last_diameter = pupil_position["diameter_3d"]
 
     # -----
     # Duration
@@ -84,30 +92,39 @@ def main():
             if i < len(fixations):
                 fixations[i] = 1
 
-
-    
-
-    
-
+    if not os.path.exists(sys.argv[2]):
+        os.makedirs(sys.argv[2])
 
     blinkPlt = plt.figure(0)
 
     plt.plot(blink_freq)
     plt.ylabel('Blink Frequency')
     plt.xlabel('time [s]')
+    plt.savefig(os.path.join(sys.argv[2], 'blink.png'))
     #blinkPlt.show()
 
     diameterPlt = plt.figure(1)
     plt.plot(pupil_diameter_x, pupil_diameter_y)
     plt.ylabel("diameter [mm]")
     plt.xlabel("time [s]")
+    plt.savefig(os.path.join(sys.argv[2], 'diameter.png'))
 
-    fixationPlt = plt.figure(2)
+
+    with open(os.path.join(sys.argv[2], 'diameter.csv'), 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',')
+        writer.writerow(pupil_diameter_x)
+        writer.writerow(pupil_diameter_y)
+
+    with open(os.path.join(sys.argv[2], 'blink.csv'), 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',')
+        writer.writerow(blink_freq)
+
+    #fixationPlt = plt.figure(2)
     #plt.plot(fixations)
-    plt.bar(range(len(fixations)), fixations, 1)
-    plt.ylabel("fixating [bool]")
-    plt.xlabel("time [s*10]")
-    plt.show()
+    #plt.bar(range(len(fixations)), fixations, 1)
+    #plt.ylabel("fixating [bool]")
+    #plt.xlabel("time [s*10]")
+    #plt.show()
 
 if __name__ == "__main__":
     main()
