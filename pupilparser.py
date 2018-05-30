@@ -19,6 +19,8 @@ def main():
     pupil_diameter_x = [] # time
     pupil_diameter_y = [] # diameter
 
+    pupil_error_x = [] # time
+    pupil_error_y = []
 
     start_time = sys.maxint
     end_time = -sys.maxint
@@ -74,6 +76,8 @@ def main():
     last_timestamp = -1
 
     for pupil_position in pupil_data_object["pupil_positions"]:
+        pupil_error_x.append(pupil_position["timestamp"] - start_time)
+        pupil_error_y.append(pupil_position["confidence"])
         if pupil_position["confidence"] > 0.6:
             if last_timestamp == -1 or last_diameter == -1 or abs(last_diameter - pupil_position["diameter_3d"])/abs(pupil_position["timestamp"]-last_timestamp) < 1:
                 pupil_diameter_x.append(pupil_position["timestamp"] - start_time)
@@ -110,6 +114,13 @@ def main():
     plt.savefig(os.path.join(sys.argv[2], 'diameter.png'))
 
 
+    error = plt.figure(2)
+    plt.plot(pupil_error_x, pupil_error_y)
+    plt.ylabel("confidence")
+    plt.xlabel("time [s]")
+    plt.savefig(os.path.join(sys.argv[2], 'error.png'))
+
+
     with open(os.path.join(sys.argv[2], 'diameter.csv'), 'wb') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(pupil_diameter_x)
@@ -118,6 +129,12 @@ def main():
     with open(os.path.join(sys.argv[2], 'blink.csv'), 'wb') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(blink_freq)
+
+
+    with open(os.path.join(sys.argv[2], 'confidence.csv'), 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',')
+        writer.writerow(pupil_error_x)
+        writer.writerow(pupil_error_y)
 
     #fixationPlt = plt.figure(2)
     #plt.plot(fixations)
